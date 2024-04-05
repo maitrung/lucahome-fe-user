@@ -1,0 +1,295 @@
+
+
+
+@media only screen and (max-width: 600px) {
+    .hero-section {
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .banner-mobile {
+      min-height: 650px !important;
+      max-height: 650px !important;
+    }
+
+    .hero-text {
+        padding-top: 0px;
+    }
+
+    .hero-text h1 {
+        font-size: 60px;
+        line-height: 70px;
+        color: #ffffff;
+        margin-bottom: 16px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        color: #ffffff;
+        line-height: 28px;
+        margin-bottom: 15px;
+    }
+
+    #mobile-bg-1 {
+        /* content: url('../img/hero/mobile-bg.jpg'); */
+        background-image: url('../img/hero/hero-1.jpg');
+    }
+
+    #mobile-bg-2 {
+        content: url('../img/hero/mobile-bg.jpg');
+    }
+
+    #mobile-bg-3 {
+        content: url('../img/hero/mobile-bg.jpg');
+    }
+
+    .infinite-scroll-table th {
+        font-weight:normal;
+        /* min-width: 100px; */
+        text-align: center;
+      }
+}
+
+#mobile-bg-1 {
+    /* content: url('../img/hero/mobile-bg.jpg'); */
+    background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.fpt.shop%2Funsafe%2Ffilters%3Aquality(5)%2Ffptshop.com.vn%2Fuploads%2Fimages%2Ftin-tuc%2F158160%2FOriginals%2F2%2520(7).jpg&tbnid=Ph8RWw_Z_vLfbM&vet=12ahUKEwixgefFiZ2DAxUAT2wGHUDlDHEQMygAegQIARBN..i&imgrefurl=https%3A%2F%2Ffptshop.com.vn%2Ftin-tuc%2Fthu-thuat%2Fhinh-nen-mau-xanh-158160&docid=_Ddx_uwShTXl7M&w=675&h=1200&q=h%C3%ACnh&ved=2ahUKEwixgefFiZ2DAxUAT2wGHUDlDHEQMygAegQIARBN');
+    background-size: contain;
+    width:100px;
+    height:100px;
+}
+
+.hover-black:hover {
+    color: black;
+}
+
+.hp-room-section {
+    padding-top: 50px;
+    /* padding-bottom: 50px; */
+}
+
+.react-datepicker-wrapper {
+    display: block !important;
+}
+
+.mantine-kq5u63 {
+    display: none !important;
+}
+
+.mantine-vl6xmj {
+    display: none !important;
+}
+
+.none-border {
+    border: none;
+    padding: 2px;
+}
+  
+.list-group-item strong {
+    font-weight: bold;
+}
+  
+.border-left {
+    border-left: 1px solid #dee2e6;
+}
+
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .infinite-scroll-table {
+    font-size: 13px;
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin; /* For Firefox */;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .infinite-scroll-table th {
+    font-weight:normal;
+    /* min-width: 200px; */
+    text-align: center;
+  }
+
+  .infinite-scroll-table td{
+    background-color: #ffffff;
+    margin: 5px;
+    border: none;
+    text-align: center;
+  }
+  
+  .infinite-scroll-table::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .infinite-scroll-table::-webkit-scrollbar-thumb {
+    background-color: #dfa974; /* Màu của thanh cuộn */
+    border-radius: 10px; /* Bo tròn ở 2 đầu thanh cuộn */
+  }
+  
+  .infinite-scroll-table::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Màu nền của thanh cuộn */
+    border-radius: 10px; /* Bo tròn ở 2 đầu thanh cuộn */
+  }
+  
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .sticky-column {
+    position: sticky;
+    left: -1px;
+    z-index: 2; 
+    background-color: #ffffff;
+  }
+  
+  .sticky-column2 {
+    position: sticky;
+    left: 90px; 
+    z-index: 1; 
+    background-color: #ffffff;
+  }
+
+  .highlight-red {
+    background-color: #ff0000; /* Màu đỏ */
+    color: #ffffff; /* Màu chữ trắng, điều này có thể thay đổi tùy thuộc vào ý muốn của bạn */
+  }
+
+  .inAvailable-item {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #dfa974;
+    min-width: 30px;
+    color: transparent;
+  }
+
+  .available-item {
+    border-radius: 5px;
+    background-color: #dfa974;
+    min-width: 30px;
+    color: transparent;
+  }
+
+  .click-available-item {
+    background-color: #42d7f1;
+    border-color: #42d7f1;
+  }
+
+  .bold-text-button {
+    font-weight: normal; /* Set the default font weight */
+    transition: font-weight 0.2s; /* Add a smooth transition effect */
+  }
+  
+  .bold-text-button.bold-button {
+    box-shadow: none;
+    font-weight: bold; /* Apply bold font weight when the button is clicked */
+
+  }
+
+  .table .table-detail-time-booking th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* white-space: nowrap; */
+    background-color: #fff;
+    width: 40px;
+    padding: 6px;
+  }
+
+  .table .table-detail-time-booking th:first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #ffffff;
+    width: 20px;
+  }
+
+  .table .table-detail-time-booking th:nth-child(2) {
+    left: 10px; 
+    z-index: 2;
+    position: sticky;
+    top: 0; 
+    background-color: #ffffff;
+  }
+
+  /* .table .available-time-booking th:first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #ffffff;
+    width: 20px;
+  }
+
+  .table .available-time-booking th:nth-child(2) {
+    left: 10px; 
+    z-index: 2;
+    position: sticky;
+    top: 0; 
+    background-color: #ffffff;
+  } */
+
+  .centered-carousel {
+    overflow: hidden;
+  }
+  
+  .center-card {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Điều chỉnh chiều rộng của card hiển thị chính giữa */
+    min-height: 500px; /* Điều chỉnh chiều cao của card hiển thị chính giữa */
+    background-size: cover;
+  }
+
+  .confirm-time-booking {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid #dfa974;
+    border-radius: 2px;
+    color: white;
+    background-color: #dfa974;
+    font-weight: 500;
+    background: transparent;
+    width: 25%;
+    height: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+  }
+
+  .disabled-btn {
+    cursor: not-allowed; /* Đổi con trỏ chuột thành not-allowed khi tắt */
+    color: #dfa974;
+    border: 1px solid #dfa974;
+    background-color: transparent;
+    /* Bất kỳ kiểu CSS khác mà bạn muốn áp dụng cho nút tắt */
+  }
+
+  .invalid-btn {
+    background-color: #dfa974;
+    color: white;
+  }
+
+  .freeze-header {
+    position: sticky;
+    top: -2px;
+    background-color: #fff;
+    z-index: 3; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+  }
+
+  .freeze-header2 {
+    position: sticky;
+    top: 23px;
+    background-color: #fff; /* Màu nền của header */
+    z-index: 4; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+  }
