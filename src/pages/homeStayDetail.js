@@ -571,7 +571,7 @@ function HomeStayDetail() {
                                     <p>
                                         Vì là hệ thống homestay self-checkin, nên bạn lưu ý phải điền đúng SĐT và Email khi thực hiện đặt phòng. Để hệ thống ghi nhận và gửi những thông tin nhận phòng cho bạn nhé!
                                     </p>
-                                    <p>Nếu có vấn đề gì thắc mắc trong quá trình đặt phòng. Bạn có thể liên hệ qua SĐT/ZALO: 0584 835 027</p>
+                                    <p>Nếu có vấn đề gì thắc mắc trong quá trình đặt phòng. Bạn có thể liên hệ qua SĐT/ZALO: 0342.742.205</p>
 
                                     {/* <p className="f-para">{homeStay?.description}</p> */}
                                 </div>

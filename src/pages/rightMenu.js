@@ -93,7 +93,7 @@ function Menu() {
         </div>
         <ul className='top-widget'>
           <li>
-            <i className='fa fa-phone'></i> 0584 835 027
+            <i className='fa fa-phone'></i> 0342.742.205
           </li>
           <li className='hover-black'>
             <a
@@ -115,7 +115,7 @@ function Menu() {
               <div className='col-lg-6'>
                 <ul className='tn-left'>
                   <li>
-                    <i className='fa fa-phone'></i> 0584 835 027
+                    <i className='fa fa-phone'></i> 0342.742.205
                   </li>
                   <li className='hover-black'>
                     <a
