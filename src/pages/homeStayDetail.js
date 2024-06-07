@@ -864,6 +864,7 @@ function HomeStayDetail() {
                                                     isInvalid={!!errorsCustomerInfo.note}
                                                 />
                                                 <Form.Control.Feedback type="invalid">{errorsCustomerInfo.note}</Form.Control.Feedback>
+                                                <p style={{ fontSize: '12px', color: 'red', marginTop: '15px', marginBottom: '5px' }}> Khi xác nhận đặt phòng, đồng nghĩa với việc bạn đã đồng ý với <a href={homeStay?.rule} target="_blank" style={{ fontSize: '12px', color: 'red' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>nội quy</span></a></p>
                                             </Form.Group>
                                         </div>
                                     </Row>
