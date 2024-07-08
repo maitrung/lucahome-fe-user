@@ -149,13 +149,13 @@ function Index() {
                         <Col xs={6} md={4} className='d-flex' style={{ marginTop: '10px' }}>
                             <div style={{ display: 'flex', fontSize: '12px' }}>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#5c5bb8', width: '48px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                    <div style={{ backgroundColor: '#e08594', width: '48px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
                                 </div>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#white', width: '48px', height: '20px', margin: '0 4px 0 0', border: '2px solid #5c5bb8' }}></div> <span>Còn trống</span>
+                                    <div style={{ backgroundColor: '#white', width: '48px', height: '20px', margin: '0 4px 0 0', border: '2px solid #e08594' }}></div> <span>Còn trống</span>
                                 </div>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#adadd9 ', width: '48px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
+                                    <div style={{ backgroundColor: '#ebafb0 ', width: '48px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
                                 </div>
                             </div>
                         </Col>

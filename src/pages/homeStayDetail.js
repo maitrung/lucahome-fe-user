@@ -582,13 +582,13 @@ function HomeStayDetail() {
                             <div style={{ backgroundColor: 'white', minHeight: '50px', padding: '5px' }}>
                                 <div style={{ display: 'flex', marginTop: '15px', fontSize: '12px' }}>
                                     <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                        <div style={{ backgroundColor: '#5c5bb8', width: '60px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                        <div style={{ backgroundColor: '#e08594', width: '60px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
                                     </div>
                                     <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                        <div style={{ backgroundColor: '#white', width: '60px', height: '20px', margin: '0 4px 0 0', border: '2px solid #5c5bb8' }}></div> <span>Còn trống</span>
+                                        <div style={{ backgroundColor: '#white', width: '60px', height: '20px', margin: '0 4px 0 0', border: '2px solid #e08594' }}></div> <span>Còn trống</span>
                                     </div>
                                     <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                        <div style={{ backgroundColor: '#adadd9', width: '60px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
+                                        <div style={{ backgroundColor: '#ebafb0', width: '60px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
                                     </div>
                                 </div>
                             </div>
@@ -881,7 +881,7 @@ function HomeStayDetail() {
                                                     isInvalid={!!errorsCustomerInfo.note}
                                                 />
                                                 <Form.Control.Feedback type="invalid">{errorsCustomerInfo.note}</Form.Control.Feedback>
-                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '15px', marginBottom: '5px', fontStyle: 'italic' }}> Khi bấm đặt Homestay đồng nghĩa với việc bạn đã đọc và đồng ý với các <a href={homeStay?.rule} target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Nội quy</span></a> & <a href="https://drive.google.com/file/d/1ExI_EQrzM0ylujRJazpGwzHA5Bs_r24Q/view?usp=sharing" target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Chính sách</span></a> của Luca</p>
+                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '15px', marginBottom: '5px', fontStyle: 'italic' }}> Khi bấm đặt Homestay đồng nghĩa với việc bạn đã đọc và đồng ý với các <a href={homeStay?.rule} target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Nội quy</span></a> & <a href="https://drive.google.com/file/d/1KMJmCaVGIze8xGwHrYS-WLLjGqwiHNOr/view?usp=sharing" target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Chính sách</span></a> của Luca</p>
                                             </Form.Group>
                                         </div>
                                     </Row>
