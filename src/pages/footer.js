@@ -26,11 +26,11 @@ function Footer(props) {
                         </div>
                         <div className="col-lg-3 offset-lg-1">
                             <div className="ft-contact">
-                                <h6>Liên hệ</h6>
+                                <h6 style={{ color: 'black' }}>Liên hệ</h6>
                                 <ul>
-                                    <li>{siteInfo.phoneNumber}</li>
-                                    <li><a className="hover-black" href={siteInfo.facebook} target="_blank">Luca Home</a></li>
-                                    <li>Địa chỉ</li>
+                                    <li style={{ color: 'black' }}>{siteInfo.phoneNumber}</li>
+                                    <li><a className="hover-black" href={siteInfo.facebook} target="_blank" style={{ color: 'black' }}>Luca Home</a></li>
+                                    <li style={{ color: 'black' }}>Địa chỉ</li>
                                 </ul>
                             </div>
                         </div>

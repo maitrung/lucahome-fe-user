@@ -122,7 +122,7 @@ function Index() {
                 <div className="container-fluid">
                     <div className="hp-room-items">
                         <div className="row">
-                            <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>Danh sách phòng</h1>
+                            <h1 style={{ fontFamily: 'Gilroy-Regular', textAlign: 'center', fontWeight: 'bold', color: '#feebd6' }}>Danh sách phòng</h1>
                             {/* <HomeStaySlide /> */}
                             {!_.isEmpty(homestay) ? <HomeStaySlide data={homestay} /> : (<Spinner animation="border" variant="primary" />)}
                             {!_.isEmpty(errorAPI) ? <p>{JSON.stringify(errorAPI)}</p> : (<p></p>)}
@@ -134,28 +134,28 @@ function Index() {
             </section>
             {/* <!-- Home Room Section End --> */}
 
-            <section className="hp-room-section" style={{ paddingTop: '0px' }}>
+            <section className="hp-room-section" style={{ paddingTop: '0px', marginBottom: '50px' }}>
                 <div className="">
                     <Row style={{ marginBottom: '20px' }}>
                         <Col xs={{ span: 7, offset: 3 }} md={{ span: 7, offset: 3 }} sm={{ span: 7, offset: 3 }}>
-                            <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>Lịch đặt phòng</h1>
+                            <h1 style={{ fontFamily: 'Gilroy-Regular', textAlign: 'center', fontWeight: 'bold', color: '#feebd6' }}>Lịch đặt phòng</h1>
                         </Col>
                         <Col xs={3} md={3} sm={3} className='d-flex justify-content-end' >
                             {/* <button disabled={!showConfirmButton} className={`confirm-time-booking ${showConfirmButton ? '' : 'disabled-btn'}`} onClick={() => navigateToDetail()} style={{ minWidth: '100px', marginTop: '5px' }} > Xác nhận</button> */}
                         </Col>
                     </Row>
                     {!_.isEmpty(homestay) ? <AvailableAllRoom data={{ homestay }} onChooseTime={chooseBookingTime} /> : (<Spinner animation="border" variant="primary" />)}
-                    <Row >
+                    <Row style={{ backgroundColor: 'white', padding: '5px' }}>
                         <Col xs={6} md={4} className='d-flex' style={{ marginTop: '10px' }}>
                             <div style={{ display: 'flex', fontSize: '12px' }}>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#DFA974', width: '48px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                    <div style={{ backgroundColor: '#5c5bb8', width: '48px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
                                 </div>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#white', width: '48px', height: '20px', margin: '0 4px 0 0', border: '1px solid #00000078' }}></div> <span>Còn trống</span>
+                                    <div style={{ backgroundColor: '#white', width: '48px', height: '20px', margin: '0 4px 0 0', border: '2px solid #5c5bb8' }}></div> <span>Còn trống</span>
                                 </div>
                                 <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#42D7F1', width: '48px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
+                                    <div style={{ backgroundColor: '#adadd9 ', width: '48px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
                                 </div>
                             </div>
                         </Col>

@@ -1,5 +1,11 @@
 
 
+@font-face {
+  font-family: 'Gilroy-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gilroy-Regular'), url('../fonts/SVN-Gilroy-Bold.otf') format('opentype');
+}
 
 @media only screen and (max-width: 600px) {
     .hero-section {
@@ -116,7 +122,6 @@
   .infinite-scroll-table td{
     background-color: #ffffff;
     margin: 5px;
-    border: none;
     text-align: center;
   }
   
@@ -126,7 +131,7 @@
   }
   
   .infinite-scroll-table::-webkit-scrollbar-thumb {
-    background-color: #dfa974; /* Màu của thanh cuộn */
+    background-color: #fcead6; /* Màu của thanh cuộn */
     border-radius: 10px; /* Bo tròn ở 2 đầu thanh cuộn */
   }
   
@@ -164,21 +169,22 @@
   .inAvailable-item {
     border: 1px solid;
     border-radius: 5px;
-    border-color: #dfa974;
+    border-color: #e08594;
     min-width: 30px;
+    background-color: white;
     color: transparent;
   }
 
   .available-item {
     border-radius: 5px;
-    background-color: #dfa974;
+    background-color: #e08594;
     min-width: 30px;
     color: transparent;
   }
 
   .click-available-item {
-    background-color: #42d7f1;
-    border-color: #42d7f1;
+    background-color: #ebafb0;
+    border-color: #ebafb0;
   }
 
   .bold-text-button {
@@ -254,10 +260,10 @@
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-    border: 1px solid #dfa974;
+    border: 1px solid #fcead6;
     border-radius: 2px;
     color: white;
-    background-color: #dfa974;
+    background-color: #fcead6;
     font-weight: 500;
     background: transparent;
     width: 25%;
@@ -269,27 +275,36 @@
 
   .disabled-btn {
     cursor: not-allowed; /* Đổi con trỏ chuột thành not-allowed khi tắt */
-    color: #dfa974;
-    border: 1px solid #dfa974;
+    color: #e08594;
+    border: 2px solid #e08594;
     background-color: transparent;
+    font-weight: bold;
     /* Bất kỳ kiểu CSS khác mà bạn muốn áp dụng cho nút tắt */
   }
 
   .invalid-btn {
-    background-color: #dfa974;
+    background-color: #e08594;
     color: white;
+    font-weight: bold;
   }
 
-  .freeze-header {
+  .freeze-header0 {
     position: sticky;
-    top: -2px;
+    top: 0px;
     background-color: #fff;
     z-index: 3; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
   }
 
+  .freeze-header {
+    position: sticky;
+    top: 30px;
+    /* background-color: #fff; */
+    z-index: 4; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+  }
+
   .freeze-header2 {
     position: sticky;
-    top: 23px;
+    top: 55px;
     background-color: #fff; /* Màu nền của header */
-    z-index: 4; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+    z-index: 5; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
   }

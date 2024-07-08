@@ -47,7 +47,7 @@ const HomeStaySlide = (props) => {
             >
                 {props.data.map((item, index) => {
                     return <SwiperSlide>
-                        <div style={{ padding: '6px', backgroundColor: '#dfa974', borderRadius: '2em' }} onClick={() => findHomeStay(item)}>
+                        <div style={{ padding: '6px', backgroundColor: '#fcead6', borderRadius: '2em' }} onClick={() => findHomeStay(item)}>
                             <img src={item?.images?.[0]} alt="slide_image" />
                         </div>
                     </SwiperSlide>

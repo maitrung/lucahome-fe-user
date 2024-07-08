@@ -13,6 +13,8 @@ const AvailableAllRoom = (props) => {
     const [bookingTimeData, setBookingTimeData] = useState([]);
     // let prevScrollLeft = 0;
 
+    const [branchList, setBranchList] = useState([]);
+
     const [startDate, setStartDate] = useState(new Date());
 
     const fetchDay = 20;
@@ -145,7 +147,7 @@ const AvailableAllRoom = (props) => {
     const tableRef = useRef();
 
 
-    const fetchData = async (start) => {
+    const fetchData = async (start, homestayProps) => {
         try {
             // Simulate fetching data from an API
             setLoading(true);
@@ -158,6 +160,8 @@ const AvailableAllRoom = (props) => {
                 to
             }
 
+            const homestayList = homestayProps || homestay;
+
             let response = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'https://luca-home.vercel.app'}/room/checkAvailable`, data);
             response = response?.data
             let newData = [];
@@ -167,6 +171,8 @@ const AvailableAllRoom = (props) => {
                 const newFormat = [];
 
                 _.forEach(newData, (data) => {
+                    const homeStayInfo = _.find(homestayList, { id: data?.roomId });
+
                     _.forEach(data.dateAvailable, (dateAvailable) => {
                         const existDate = _.find(newFormat, { date2: moment(dateAvailable?.date).format('DD-MM-YYYY') })
                         if (existDate) {
@@ -174,7 +180,8 @@ const AvailableAllRoom = (props) => {
                                 time1: { ...dateAvailable?.bookingTimeSlots?.[0], roomId: data.roomId, order: 1 },
                                 time2: { ...dateAvailable?.bookingTimeSlots?.[1], roomId: data.roomId, order: 2 },
                                 time3: { ...dateAvailable?.bookingTimeSlots?.[2], roomId: data.roomId, order: 3 },
-                                time4: { ...dateAvailable?.bookingTimeSlots?.[3], roomId: data.roomId, order: 4 }
+                                time4: { ...dateAvailable?.bookingTimeSlots?.[3], roomId: data.roomId, order: 4 },
+                                color: homeStayInfo?.branchColor
                             }
 
                             existDate.data.push(obj);
@@ -187,7 +194,8 @@ const AvailableAllRoom = (props) => {
                                         time1: { ...dateAvailable?.bookingTimeSlots?.[0], roomId: data.roomId, order: 1 },
                                         time2: { ...dateAvailable?.bookingTimeSlots?.[1], roomId: data.roomId, order: 2 },
                                         time3: { ...dateAvailable?.bookingTimeSlots?.[2], roomId: data.roomId, order: 3 },
-                                        time4: { ...dateAvailable?.bookingTimeSlots?.[3], roomId: data.roomId, order: 4 }
+                                        time4: { ...dateAvailable?.bookingTimeSlots?.[3], roomId: data.roomId, order: 4 },
+                                        color: homeStayInfo?.branchColor
                                     }
                                 ]
                             }
@@ -202,10 +210,10 @@ const AvailableAllRoom = (props) => {
                 if (_.isEmpty(timeSlotHeader)) {
                     let header = _.map(newFormat?.[0]?.data, (item) => {
                         return [
-                            `${item.time1.startTime} - ${item.time1.endTime}`,
-                            `${item.time2.startTime} - ${item.time2.endTime}`,
-                            `${item.time3.startTime} - ${item.time3.endTime}`,
-                            `Qua đêm ${item.time4.startTime} - ${item.time4.endTime}`
+                            { value: `${item.time1.startTime} - ${item.time1.endTime}`, color: item.color },
+                            { value: `${item.time2.startTime} - ${item.time2.endTime}`, color: item.color },
+                            { value: `${item.time3.startTime} - ${item.time3.endTime}`, color: item.color },
+                            { value: `Qua đêm ${item.time4.startTime} - ${item.time4.endTime}`, color: item.color }
                         ]
                     })
 
@@ -218,6 +226,42 @@ const AvailableAllRoom = (props) => {
         }
         setLoading(false);
     };
+
+    const getBranchList = (homeStayList) => {
+        try {
+            const branchListResult = [];
+            const notBranch = {
+                id: -1,
+                name: '',
+                numOfHome: 0
+            }
+            _.forEach(homeStayList, (homestayInfo) => {
+                if (_.isNil(homestayInfo?.branchId)) {
+                    notBranch.numOfHome += 1;
+                    return;
+                };
+
+                const existHomeStay = _.find(branchListResult, { id: homestayInfo?.branchId });
+                if (!existHomeStay) {
+                    branchListResult.push({
+                        id: homestayInfo?.branchId,
+                        name: homestayInfo?.branchName,
+                        color: homestayInfo?.branchColor,
+                        numOfHome: 1
+                    });
+                } else {
+                    existHomeStay.numOfHome += 1;
+                }
+            })
+
+            if (notBranch.numOfHome > 0) branchListResult.push(notBranch);
+
+            setBranchList(branchListResult);
+        } catch (error) {
+            console.log(`[ERROR] => [AVAILABLE_ALL_ROOM] get branch list error: ${error.message}`);
+        }
+    }
+
 
     // const handleScrollHorizontal = (event) => {
     //     console.log('here');
@@ -238,12 +282,14 @@ const AvailableAllRoom = (props) => {
     useEffect(() => {
         setHomeStay(props.data.homestay)
 
+        getBranchList(props.data.homestay);
+
         let start = moment(new Date());
         if (start.isBefore(moment({ hour: 6, minute: 0, second: 0 }))) {
             start = moment().subtract(1, 'days')
         }
 
-        fetchData(start);
+        fetchData(start, props.data.homestay);
 
         // const handleScrollA = () => {
         //     clearTimeout(scrollTimeout);
@@ -280,19 +326,25 @@ const AvailableAllRoom = (props) => {
 
     return (
         <div className="infinite-scroll-table" onScroll={handleScroll} style={{ fontFamily: 'Cabin' }} ref={tableRef}>
-            <Table striped bordered hover style={{ fontSize: '10px' }}>
+            <Table bordered hover style={{ fontSize: '10px' }}>
                 <thead className="available-time-booking">
+                    <tr className='freeze-header0'>
+                        <th className='sticky-column' colSpan={2}>Chi nhánh</th>
+                        {_.map(branchList, (item, index) => (
+                            <th key={index} colSpan={item.numOfHome * 4} style={{ fontWeight: 'bolder', backgroundColor: !_.isEmpty(item?.color) ? item?.color : '', color: 'black', position: 'sticky' }}>{item.name}</th>
+                        ))}
+                    </tr>
                     <tr className='freeze-header'>
                         <th className='sticky-column' colSpan={2}>Tên phòng</th>
                         {homestay.map((item, index) => (
-                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder' }}>{item.name}</th>
+                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder', backgroundColor: item.branchColor, position: 'sticky' }}>{item.name}</th>
                         ))}
                     </tr>
                     <tr className='freeze-header2'>
                         <th className='sticky-column'>Thứ</th>
                         <th className='sticky-column2' style={{ minWidth: '80px', left: '31px' }}>Ngày</th>
                         {timeSlotHeader.map((item, index) => (
-                            <th key={index}>{item}</th>
+                            <th key={index} style={{ backgroundColor: item.color, position: 'sticky' }} >{item.value}</th>
                         ))}
                     </tr>
                 </thead>
@@ -306,11 +358,11 @@ const AvailableAllRoom = (props) => {
 
                             {parentItem.data.map((item, index) => (
                                 <>
-                                    <td style={{ minWidth: '70px' }}>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>
                                         {((item.time1.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time1)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time1) ? 'click-available-item' : ''}`}>''</div>)))}</td>
-                                    <td style={{ minWidth: '70px' }}>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time2)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                                    <td style={{ minWidth: '70px' }}>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time3)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                                    <td style={{ minWidth: '75px', borderRight: '2px solid #dee2e6' }}>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time4)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time2)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time3)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                                    <td style={{ minWidth: '75px', borderRight: '2px solid #dee2e6', backgroundColor: item.color }}>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time4)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
                                 </>
                             ))}
 

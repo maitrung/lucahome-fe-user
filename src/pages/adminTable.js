@@ -145,7 +145,7 @@ const InfiniteScrollTable = (props) => {
           type='submit'
           style={{
             height: '33px',
-            backgroundColor: '#DFA974',
+            backgroundColor: '#fcead6',
             color: 'white',
             border: 'none',
             borderRadius: '3px',

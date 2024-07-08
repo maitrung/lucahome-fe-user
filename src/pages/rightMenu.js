@@ -43,13 +43,13 @@ function Menu() {
         <nav className='mainmenu mobile-menu'>
           <ul>
             <li className='active'>
-              <Link to='/'>Trang chủ</Link>
+              <Link to='/' style={{ color: '#fcead6' }}>Trang chủ</Link>
             </li>
             <li>
-              <Link to='/homestay'>Home stay</Link>
+              <Link to='/homestay' style={{ color: '#fcead6' }}>Home stay</Link>
             </li>
             <li>
-              <Link to='/contact'>Liên hệ</Link>
+              <Link to='/contact' style={{ color: '#fcead6' }}>Liên hệ</Link>
             </li>
           </ul>
         </nav>
@@ -123,7 +123,7 @@ function Menu() {
                       target='_blank'
                       href='https://www.facebook.com/MaryJaneTheHomeVietNam?mibextid=LQQJ4d'
                     >
-                      <i className='fa fa-envelope'></i> LUca Home
+                      <i className='fa fa-envelope'></i> Luca Home
                     </a>
                   </li>
                 </ul>

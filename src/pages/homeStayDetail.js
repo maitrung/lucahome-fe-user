@@ -503,7 +503,7 @@ function HomeStayDetail() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="breadcrumb-text">
-                                <h2>Chi tiết HomeStay</h2>
+                                <h2 style={{ fontFamily: 'Gilroy-Regular', fontWeight: 'bold', color: '#feebd6' }}>Chi tiết HomeStay</h2>
                                 {/* <!-- <div className="bt-option">
                                     <a href="./home.html">Home</a>
                                     <span>Rooms</span>
@@ -527,9 +527,9 @@ function HomeStayDetail() {
                                     })}
                                 </Carousel>
 
-                                <div className="rd-text">
+                                <div className="rd-text" style={{ marginTop: '20px' }}>
                                     <div className="rd-title">
-                                        <h3>{homeStay?.name}</h3>
+                                        <h3 style={{ fontFamily: 'Gilroy-Regular', color: '#fcead6' }}>{homeStay?.name}</h3>
                                         {/* <div className="rdt-right">
                                             <div className="rating">
                                                 <i className="icon_star"></i>
@@ -542,12 +542,12 @@ function HomeStayDetail() {
                                     </div>
                                     <div style={{
                                         fontSize: '14px',
-                                        color: '#6b6b6b',
+                                        color: '#feebd6',
                                         fontWeight: '400',
                                         marginBottom: '10px'
                                     }}>Bảng giá:</div>
-                                    <h2>{numeral(homeStay?.priceList?.threeHours || 0).format('0,0')} vnđ<span> / 3h</span></h2>
-                                    <h2>{numeral(homeStay?.priceList?.overNight || 0).format('0,0')} vnđ<span> / Qua đêm</span></h2>
+                                    <h2>{numeral(homeStay?.priceList?.threeHours || 0).format('0,0')} vnđ<span style={{ color: '#feebd6' }}> / 3h</span></h2>
+                                    <h2>{numeral(homeStay?.priceList?.overNight || 0).format('0,0')} vnđ<span style={{ color: '#feebd6' }}> / Qua đêm</span></h2>
                                     <table>
                                         <tbody>
                                             {/* <tr>
@@ -568,10 +568,10 @@ function HomeStayDetail() {
                                             </tr> */}
                                         </tbody>
                                     </table>
-                                    <p>
+                                    <p style={{ color: '#feebd6' }}>
                                         Vì là hệ thống homestay self-checkin, nên bạn lưu ý phải điền đúng SĐT và Email khi thực hiện đặt phòng. Để hệ thống ghi nhận và gửi những thông tin nhận phòng cho bạn nhé!
                                     </p>
-                                    <p>Nếu có vấn đề gì thắc mắc trong quá trình đặt phòng. Bạn có thể liên hệ qua SĐT/ZALO: 0342.742.205</p>
+                                    <p style={{ color: '#feebd6' }}>Nếu có vấn đề gì thắc mắc trong quá trình đặt phòng. Bạn có thể liên hệ qua SĐT/ZALO: 0584 835 027</p>
 
                                     {/* <p className="f-para">{homeStay?.description}</p> */}
                                 </div>
@@ -579,43 +579,58 @@ function HomeStayDetail() {
                             <div className="rd-date-available" id="table-list-available">
                                 {homeStay?.id && <InfiniteScrollTable data={{ roomId: homeStay?.id, bookingTimeSlots: homeStay?.bookingTimeSlots, bookDateData: bookDateData }} chooseDate={dataChooseDate} />}
                             </div>
-                            <div style={{ display: 'flex', marginTop: '15px', fontSize: '12px' }}>
-                                <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#DFA974', width: '60px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
-                                </div>
-                                <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#white', width: '60px', height: '20px', margin: '0 4px 0 0', border: '1px solid #00000078' }}></div> <span>Còn trống</span>
-                                </div>
-                                <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                    <div style={{ backgroundColor: '#42D7F1', width: '60px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
+                            <div style={{ backgroundColor: 'white', minHeight: '50px', padding: '5px' }}>
+                                <div style={{ display: 'flex', marginTop: '15px', fontSize: '12px' }}>
+                                    <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ backgroundColor: '#5c5bb8', width: '60px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                    </div>
+                                    <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ backgroundColor: '#white', width: '60px', height: '20px', margin: '0 4px 0 0', border: '2px solid #5c5bb8' }}></div> <span>Còn trống</span>
+                                    </div>
+                                    <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ backgroundColor: '#adadd9', width: '60px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
+                                    </div>
                                 </div>
                             </div>
                             <div className='calculate-payment' style={{ marginTop: '30px', fontSize: '19px', display: 'flex', alignItems: 'center' }}>
                                 <div style={{ fontSize: '18px', display: 'flex', alignItems: 'center', fontFamily: 'Cabin' }}>
-                                    <span style={{ margin: '0 8px 0 0', color: '#6b6b6b', fontWeight: '400' }}>Tổng tiền tạm tính:</span>
-                                    {isLoadingTotalPayment ? (<Spinner animation="grow" role="status" variant="secondary" size='sm'></Spinner>) : (<b style={{ margin: '0 8px 0 0', color: '#6b6b6b', fontWeight: 'bold' }}>{numeral(totalPayment).format('0,0')} đ</b>)}
+                                    <span style={{ margin: '0 8px 0 0', color: '#fcead6', fontWeight: '400' }}>Tổng tiền tạm tính:</span>
+                                    {isLoadingTotalPayment ? (<Spinner animation="grow" role="status" variant="secondary" size='sm'></Spinner>) : (<b style={{ margin: '0 8px 0 0', color: '#fcead6', fontWeight: 'bold' }}>{numeral(totalPayment).format('0,0')} đ</b>)}
                                 </div>
                             </div>
                         </div>
 
                         <div className="col-lg-4">
                             <div className="room-booking">
-                                <h3>Thông tin đặt phòng</h3>
+                                <h3 style={{ fontFamily: 'Gilroy-Regular', fontWeight: 'bold', color: '#feebd6' }}>Thông tin đặt phòng</h3>
                                 <Form onSubmit={actionSubmitForm} >
                                     <Row className="mb-3">
                                         {/* <div className='select-option' style={{ marginBottom: '0px', width: '100%' }}>
                                             <p>Thời gian: Từ 12:00 12/12/2023 đến 12:00 12/12/2023 </p> 
                                         </div> */}
+                                        {!_.isEmpty(homeStay?.branchName) ? (<div className='select-option' style={{ width: '100%' }}>
+                                            <Form.Group as={Col} >
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}>Chi nhánh: </Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="branchName"
+                                                    value={homeStay?.branchName}
+                                                    disabled
+                                                />
+                                            </Form.Group>
+                                        </div>) : (<Fragment></Fragment>)}
+
+
                                         <div className='select-option' style={{ marginBottom: '0px', width: '100%' }}>
                                             <Form.Group as={Col} >
                                                 <NumberOfPeopleInput change={changeNumPeople} />
-                                                <p style={{ fontSize: '12px', color: 'red', marginTop: '-5px', marginBottom: '10px' }}> * Nếu {'>'} 2 khách, Home xin phép phụ thu 50k/khách ạ!.</p>
+                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '-5px', marginBottom: '10px', fontStyle: 'italic' }}> * Nếu {'>'} 2 khách, Home xin phép phụ thu 50k/khách ạ!.</p>
                                             </Form.Group>
                                         </div>
 
                                         <div className='select-option' style={{ width: '100%' }}>
                                             <Form.Group as={Col} >
-                                                <Form.Label style={{ fontWeight: 'bold' }}>Tên: </Form.Label>
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}>Tên: </Form.Label>
                                                 <Form.Control
                                                     type="text"
                                                     placeholder="Nhập tên..."
@@ -630,7 +645,7 @@ function HomeStayDetail() {
 
                                         <div className='select-option' style={{ width: '100%' }}>
                                             <Form.Group as={Col} >
-                                                <Form.Label style={{ fontWeight: 'bold' }}>Số điện thoại</Form.Label>
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}>Số điện thoại</Form.Label>
                                                 <Form.Control
                                                     type="tel"
                                                     placeholder="Nhập số điện thoại..."
@@ -645,7 +660,7 @@ function HomeStayDetail() {
 
                                         <div className='select-option' style={{ width: '100%' }}>
                                             <Form.Group as={Col} >
-                                                <Form.Label style={{ fontWeight: 'bold' }}>Email</Form.Label>
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}>Email</Form.Label>
                                                 <Form.Control
                                                     type="email"
                                                     placeholder="Nhập email..."
@@ -655,13 +670,13 @@ function HomeStayDetail() {
                                                     isInvalid={!!errorsCustomerInfo.email}
                                                 />
                                                 <Form.Control.Feedback type="invalid">{errorsCustomerInfo.email}</Form.Control.Feedback>
-                                                <p style={{ fontSize: '12px', color: 'red', marginTop: '15px', marginBottom: '0px' }}> * Home khuyến khích sử dụng gmail và nhập đúng địa chỉ email để thông tin gửi đến bạn chính xác hơn ạ!.</p>
+                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '15px', marginBottom: '0px', fontStyle: 'italic' }}> * Home khuyến khích sử dụng gmail và nhập đúng địa chỉ email để thông tin gửi đến bạn chính xác hơn ạ!.</p>
                                             </Form.Group>
                                         </div>
 
                                         <div className='select-option' style={{ width: '100%', marginTop: '5px' }}>
                                             <Form.Group as={Col} >
-                                                <Form.Label style={{ fontWeight: 'bold' }}> <span style={{ color: 'red' }}>*</span> Hình CCCD/CMND (mặt trước/sau)</Form.Label>
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}> <span style={{ color: '#fffaf5' }}>*</span> Hình CCCD/CMND (mặt trước/sau)</Form.Label>
                                                 <Row>
                                                     {_.map(imagesCCCD, (image, index) => (
 
@@ -746,6 +761,7 @@ function HomeStayDetail() {
                                                                                 left: '50%',
                                                                                 transform: 'translate(-50%, -50%)',
                                                                                 cursor: 'pointer',
+                                                                                color: '#feebd6'
                                                                             }}
                                                                         >
                                                                             Mặt trước
@@ -787,6 +803,7 @@ function HomeStayDetail() {
                                                                                 left: '50%',
                                                                                 transform: 'translate(-50%, -50%)',
                                                                                 cursor: 'pointer',
+                                                                                color: '#feebd6'
                                                                             }}
                                                                         >
                                                                             Mặt sau
@@ -847,13 +864,13 @@ function HomeStayDetail() {
                                                     </Col>) : (<></>)}
                                                 </Row>
                                                 {!_.isEmpty(errorImageInfo) && (<p style={{ fontSize: '14px', color: 'red', margin: '0px', marginTop: '-10px' }}> {errorImageInfo}</p>)}
-                                                <p style={{ fontSize: '12px', color: 'red', marginTop: '15px', marginBottom: '5px' }}> * Thông tin cá nhân của bạn được lưu trữ bởi AI và bảo mật riêng tư ngay cả với Home. Bạn vui lòng chọn đúng ảnh CCCD của người đặt phòng và chịu trách nhiệm với thông tin trên.</p>
+                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '15px', marginBottom: '5px', fontStyle: 'italic' }}> * Thông tin cá nhân của bạn được lưu trữ bởi AI và bảo mật riêng tư ngay cả với Home. Bạn vui lòng chọn đúng ảnh CCCD của người đặt phòng và chịu trách nhiệm với thông tin trên.</p>
                                             </Form.Group>
                                         </div>
 
                                         <div className='select-option' style={{ width: '100%' }}>
                                             <Form.Group as={Col} >
-                                                <Form.Label style={{ fontWeight: 'bold' }}>Ghi chú</Form.Label>
+                                                <Form.Label style={{ fontWeight: 'bold', color: '#feebd6' }}>Ghi chú</Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     row={5}
@@ -864,7 +881,7 @@ function HomeStayDetail() {
                                                     isInvalid={!!errorsCustomerInfo.note}
                                                 />
                                                 <Form.Control.Feedback type="invalid">{errorsCustomerInfo.note}</Form.Control.Feedback>
-                                                <p style={{ fontSize: '12px', color: 'red', marginTop: '15px', marginBottom: '5px' }}> Khi xác nhận đặt phòng, đồng nghĩa với việc bạn đã đồng ý với <a href={homeStay?.rule} target="_blank" style={{ fontSize: '12px', color: 'red' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>nội quy</span></a></p>
+                                                <p style={{ fontSize: '12px', color: '#fffaf5', marginTop: '15px', marginBottom: '5px', fontStyle: 'italic' }}> Khi bấm đặt Homestay đồng nghĩa với việc bạn đã đọc và đồng ý với các <a href={homeStay?.rule} target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Nội quy</span></a> & <a href="https://drive.google.com/file/d/1ExI_EQrzM0ylujRJazpGwzHA5Bs_r24Q/view?usp=sharing" target="_blank" style={{ fontSize: '12px', color: '#fffaf5' }} rel="noreferrer"><span style={{ textDecoration: 'underline' }}>Chính sách</span></a> của Luca</p>
                                             </Form.Group>
                                         </div>
                                     </Row>
@@ -910,6 +927,10 @@ function HomeStayDetail() {
                                                     <ListGroup.Item>
                                                         <strong>Email:</strong> {customerInfo.email}
                                                     </ListGroup.Item>
+                                                    {_.isEmpty(homeStay?.branchName) ? (<Fragment></Fragment>) : (<ListGroup.Item>
+                                                        <strong>Chi nhánh:</strong> {homeStay.branchName}
+                                                    </ListGroup.Item>)}
+
                                                     <ListGroup.Item>
                                                         <strong>Tên phòng:</strong> {homeStay.name}
                                                     </ListGroup.Item>

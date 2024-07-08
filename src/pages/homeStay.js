@@ -32,10 +32,10 @@ function HomeStay() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="breadcrumb-text">
-                                <h2>Danh sách Home Stay</h2>
+                                <h2 style={{ fontFamily: 'Gilroy-Regular', color: '#fcead6' }}>Danh sách Home Stay</h2>
                                 <div className="bt-option">
-                                    <a href="./home.html">Trang chủ</a>
-                                    <span>Home staty</span>
+                                    <a href="#" style={{ fontFamily: 'Gilroy-Regular', color: '#fcead6' }}>Trang chủ</a>
+                                    <span style={{ fontFamily: 'Gilroy-Regular', color: '#fcead6' }}>Home stay</span>
                                 </div>
                             </div>
                         </div>
@@ -51,8 +51,8 @@ function HomeStay() {
                                 <div className="room-item">
                                     <img src={item?.images?.[0]} alt="" />
                                     <div className="ri-text">
-                                        <h4>{item?.name}</h4>
-                                        <h3>{numeral(item?.priceList?.overNight || 0).format('0,0')} vnđ<span>/Qua đêm</span></h3>
+                                        <h4 style={{ color: '#fcead6' }}>{item?.name}</h4>
+                                        <h3 style={{ color: '#fcead6' }}>{numeral(item?.priceList?.overNight || 0).format('0,0')} vnđ<span style={{ color: '#fcead6' }}>/Qua đêm</span></h3>
                                         <table>
                                             <tbody>
                                                 {/* <tr>
@@ -73,7 +73,7 @@ function HomeStay() {
                                                 </tr> */}
                                             </tbody>
                                         </table>
-                                        <Link to={'/detail'} state={{ data: { homeStay: item, from: new Date() } }} className="primary-btn">
+                                        <Link to={'/detail'} state={{ data: { homeStay: item, from: new Date() } }} className="primary-btn" style={{ color: '#fcead6' }}>
                                             Chi tiết
                                         </Link>
                                     </div>
@@ -233,9 +233,9 @@ function HomeStay() {
                         </div> */}
                         <div className="col-lg-12">
                             <div className="room-pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">Next <i className="fa fa-long-arrow-right"></i></a>
+                                <a href="#" style={{ color: '#fcead6' }}>1</a>
+                                <a href="#" style={{ color: '#fcead6' }}>2</a>
+                                <a href="#" style={{ color: '#fcead6' }}>Next <i className="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -49,9 +49,9 @@ function Menu(props) {
                 </div>
                 <nav className="mainmenu mobile-menu">
                     <ul>
-                        <li className="active"><Link to="/">Trang chủ</Link></li>
-                        <li><Link to="/homestay">Home stay</Link></li>
-                        <li><Link to="/contact">Liên hệ</Link></li>
+                        <li className="active" ><Link to="/" style={{ color: 'black' }}>Trang chủ</Link></li>
+                        <li><Link to="/homestay" style={{ color: 'black' }}>Home stay</Link></li>
+                        <li><Link to="/contact" style={{ color: 'black' }}>Liên hệ</Link></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -61,8 +61,8 @@ function Menu(props) {
                     <a href={siteInfo.tiktok} target="_blank" rel="noreferrer"><i className="fa"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="13" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" /></svg></i></a>
                 </div>
                 <ul className="top-widget">
-                    <li><i className="fa fa-phone"></i> {siteInfo.phoneNumber}</li>
-                    <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook} rel="noreferrer"><i className="fa fa-envelope hover-black"></i> Luca Home</a></li>
+                    <li style={{ color: 'black' }}><i className="fa fa-phone"></i> {siteInfo.phoneNumber}</li>
+                    <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook} style={{ color: 'black' }} rel="noreferrer"><i className="fa fa-envelope hover-black"></i> Luca Home</a></li>
                 </ul>
             </div>
 
@@ -72,8 +72,8 @@ function Menu(props) {
                         <div className="row">
                             <div className="col-lg-6">
                                 <ul className="tn-left">
-                                    <li><i className="fa fa-phone"></i> {siteInfo.phoneNumber}</li>
-                                    <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook}><i className="fa fa-envelope"></i> Luca Home</a></li>
+                                    <li style={{ color: '#fcead6' }}><i className="fa fa-phone"></i> {siteInfo.phoneNumber}</li>
+                                    <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook} style={{ color: '#fcead6' }}><i className="fa fa-envelope"></i> Luca Home</a></li>
                                 </ul>
                             </div>
                             <div className="col-lg-6">
@@ -106,9 +106,9 @@ function Menu(props) {
                                 <div className="nav-menu">
                                     <nav className="mainmenu">
                                         <ul>
-                                            <li className="active"><Link to="/">Trang chủ</Link></li>
-                                            <li><Link to="/homestay">Home stay</Link></li>
-                                            <li><Link to="/contact">Liên hệ</Link></li>
+                                            <li className="active" style={{ color: '#fcead6' }}><Link to="/" style={{ color: '#fcead6' }}>Trang chủ</Link></li>
+                                            <li><Link to="/homestay" style={{ color: '#fcead6' }}>Home stay</Link></li>
+                                            <li><Link to="/contact" style={{ color: '#fcead6' }}>Liên hệ</Link></li>
                                         </ul>
                                     </nav>
                                 </div>
