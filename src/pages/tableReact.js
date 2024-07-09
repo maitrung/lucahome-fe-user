@@ -291,7 +291,7 @@ const InfiniteScrollTable = (props) => {
                 <thead className="table-detail-time-booking">
                     <tr>
                         {headerValue.map((item, index) => (
-                            <th style={{ border: '1px solid #ebafb0', top: '-1px' }} key={index}  >{item}</th>
+                            <th style={{ border: '1px solid #ebafb0', top: '-1px', boxShadow: '0 2px 2px -1px #ebafb0' }} key={index}  >{item}</th>
                         ))}
                     </tr>
                 </thead>

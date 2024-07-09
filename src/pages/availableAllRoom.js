@@ -329,22 +329,22 @@ const AvailableAllRoom = (props) => {
             <Table bordered hover style={{ fontSize: '10px' }}>
                 <thead className="available-time-booking">
                     <tr className='freeze-header0'>
-                        <th className='sticky-column' colSpan={2}>Chi nhánh</th>
+                        <th className='sticky-column' style={{ boxShadow: '0 2px 2px -1px #ebafb0' }} colSpan={2}>Chi nhánh</th>
                         {_.map(branchList, (item, index) => (
-                            <th key={index} colSpan={item.numOfHome * 4} style={{ fontWeight: 'bolder', backgroundColor: !_.isEmpty(item?.color) ? item?.color : '', color: 'black', position: 'sticky', border: '1px solid #ebafb0' }}>{item.name}</th>
+                            <th key={index} colSpan={item.numOfHome * 4} style={{ fontWeight: 'bolder', backgroundColor: !_.isEmpty(item?.color) ? item?.color : '', color: 'black', position: 'sticky', border: '1px solid #ebafb0', boxShadow: '0 2px 2px -1px #ebafb0' }}>{item.name}</th>
                         ))}
                     </tr>
                     <tr className='freeze-header'>
-                        <th className='sticky-column' colSpan={2}>Tên phòng</th>
+                        <th className='sticky-column' style={{ boxShadow: '0 2px 2px -1px #ebafb0' }} colSpan={2}>Tên phòng</th>
                         {homestay.map((item, index) => (
-                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder', backgroundColor: item.branchColor, position: 'sticky', border: '1px solid #ebafb0' }}>{item.name}</th>
+                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder', backgroundColor: item.branchColor, position: 'sticky', border: '1px solid #ebafb0', boxShadow: '0 2px 2px -1px #ebafb0' }}>{item.name}</th>
                         ))}
                     </tr>
                     <tr className='freeze-header2'>
-                        <th className='sticky-column'>Thứ</th>
-                        <th className='sticky-column2' style={{ minWidth: '80px', left: '31px' }}>Ngày</th>
+                        <th className='sticky-column' style={{ boxShadow: '0 2px 2px -1px #ebafb0' }}>Thứ</th>
+                        <th className='sticky-column2' style={{ minWidth: '80px', left: '31px', boxShadow: '0 2px 2px -1px #ebafb0' }}>Ngày</th>
                         {timeSlotHeader.map((item, index) => (
-                            <th key={index} style={{ backgroundColor: item.color, position: 'sticky', border: '1px solid #ebafb0' }} >{item.value}</th>
+                            <th key={index} style={{ backgroundColor: item.color, position: 'sticky', border: '1px solid #ebafb0', boxShadow: '0 2px 2px -1px #ebafb0' }} >{item.value}</th>
                         ))}
                     </tr>
                 </thead>
