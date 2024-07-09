@@ -152,6 +152,7 @@
     left: -1px;
     z-index: 2; 
     background-color: #ffffff;
+    border: 1px solid #ebafb0 !important;
   }
   
   .sticky-column2 {
@@ -159,6 +160,7 @@
     left: 90px; 
     z-index: 1; 
     background-color: #ffffff;
+    border: 1px solid #ebafb0 !important;
   }
 
   .highlight-red {
@@ -290,21 +292,24 @@
 
   .freeze-header0 {
     position: sticky;
-    top: 0px;
+    top: -1px;
     background-color: #fff;
     z-index: 3; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+    box-shadow: 0 2px 2px -1px #ebafb0 !important;
   }
 
   .freeze-header {
     position: sticky;
-    top: 30px;
-    /* background-color: #fff; */
+    top: 31px;
+    background-color: #fff;
     z-index: 4; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+    box-shadow: 0 2px 2px -1px #ebafb0 !important;
   }
 
   .freeze-header2 {
     position: sticky;
-    top: 55px;
+    top: 63px;
     background-color: #fff; /* Màu nền của header */
     z-index: 5; /* Đảm bảo header hiển thị trên cùng của nội dung cuộn */
+    box-shadow: 0 2px 2px -1px #ebafb0 !important;
   }

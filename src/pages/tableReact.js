@@ -291,7 +291,7 @@ const InfiniteScrollTable = (props) => {
                 <thead className="table-detail-time-booking">
                     <tr>
                         {headerValue.map((item, index) => (
-                            <th key={index}  >{item}</th>
+                            <th style={{ border: '1px solid #ebafb0', top: '-1px' }} key={index}  >{item}</th>
                         ))}
                     </tr>
                 </thead>
@@ -302,11 +302,11 @@ const InfiniteScrollTable = (props) => {
                             <td className='sticky-column' onClick={() => handleChooseFullDay(item)}>{item.date1}</td>
 
                             <td className='sticky-column2' style={{ left: '10px' }} onClick={() => handleChooseFullDay(item)}>{item.date2}</td>
-                            <td>
+                            <td style={{ border: '1px solid #ebafb0' }}>
                                 {((item.time1.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time1, 1)} className={`inAvailable-item ${checkClick(item.date2, 1) ? 'click-available-item' : ''}`}>''</div>)))}</td>
-                            <td>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time2, 2)} className={`inAvailable-item ${checkClick(item.date2, 2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                            <td>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time3, 3)} className={`inAvailable-item ${checkClick(item.date2, 3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                            <td>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time4, 4)} className={`inAvailable-item ${checkClick(item.date2, 4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
+                            <td style={{ border: '1px solid #ebafb0' }}>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time2, 2)} className={`inAvailable-item ${checkClick(item.date2, 2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                            <td style={{ border: '1px solid #ebafb0' }}>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time3, 3)} className={`inAvailable-item ${checkClick(item.date2, 3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                            <td style={{ border: '1px solid #ebafb0' }}>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(item.date2, item.time4, 4)} className={`inAvailable-item ${checkClick(item.date2, 4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
                         </tr>
                     ))}
                 </tbody>

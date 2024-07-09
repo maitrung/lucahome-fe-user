@@ -331,20 +331,20 @@ const AvailableAllRoom = (props) => {
                     <tr className='freeze-header0'>
                         <th className='sticky-column' colSpan={2}>Chi nhánh</th>
                         {_.map(branchList, (item, index) => (
-                            <th key={index} colSpan={item.numOfHome * 4} style={{ fontWeight: 'bolder', backgroundColor: !_.isEmpty(item?.color) ? item?.color : '', color: 'black', position: 'sticky' }}>{item.name}</th>
+                            <th key={index} colSpan={item.numOfHome * 4} style={{ fontWeight: 'bolder', backgroundColor: !_.isEmpty(item?.color) ? item?.color : '', color: 'black', position: 'sticky', border: '1px solid #ebafb0' }}>{item.name}</th>
                         ))}
                     </tr>
                     <tr className='freeze-header'>
                         <th className='sticky-column' colSpan={2}>Tên phòng</th>
                         {homestay.map((item, index) => (
-                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder', backgroundColor: item.branchColor, position: 'sticky' }}>{item.name}</th>
+                            <th key={index} colSpan={4} style={{ fontWeight: 'bolder', backgroundColor: item.branchColor, position: 'sticky', border: '1px solid #ebafb0' }}>{item.name}</th>
                         ))}
                     </tr>
                     <tr className='freeze-header2'>
                         <th className='sticky-column'>Thứ</th>
                         <th className='sticky-column2' style={{ minWidth: '80px', left: '31px' }}>Ngày</th>
                         {timeSlotHeader.map((item, index) => (
-                            <th key={index} style={{ backgroundColor: item.color, position: 'sticky' }} >{item.value}</th>
+                            <th key={index} style={{ backgroundColor: item.color, position: 'sticky', border: '1px solid #ebafb0' }} >{item.value}</th>
                         ))}
                     </tr>
                 </thead>
@@ -358,11 +358,11 @@ const AvailableAllRoom = (props) => {
 
                             {parentItem.data.map((item, index) => (
                                 <>
-                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color, border: '1px solid #ebafb0' }}>
                                         {((item.time1.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time1)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time1) ? 'click-available-item' : ''}`}>''</div>)))}</td>
-                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time2)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                                    <td style={{ minWidth: '70px', backgroundColor: item.color }}>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time3)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
-                                    <td style={{ minWidth: '75px', borderRight: '2px solid #dee2e6', backgroundColor: item.color }}>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time4)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color, border: '1px solid #ebafb0' }}>{((item.time2.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time2)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time2) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                                    <td style={{ minWidth: '70px', backgroundColor: item.color, border: '1px solid #ebafb0' }}>{((item.time3.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time3)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time3) ? 'click-available-item' : ''}`} >''</div>)))}</td>
+                                    <td style={{ minWidth: '75px', border: '1px solid #ebafb0', backgroundColor: item.color }}>{((item.time4.isAvailable === false ? (<div className='available-item'>''</div>) : (<div onClick={() => handleOnClickItem(parentItem.date2, item.time4)} className={`inAvailable-item ${checkClick(parentItem.date2, item?.time4) ? 'click-available-item' : ''}`}>''</div>)))}</td>
                                 </>
                             ))}
 
