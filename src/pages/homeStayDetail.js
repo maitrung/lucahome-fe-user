@@ -24,7 +24,7 @@ function HomeStayDetail() {
     const [isErrorBooking, setErrorBooking] = useState(false);
     const [intervalQueryId, setIntervalQueryId] = useState(null);
 
-    const [timeCountDownQrCode, setTimeCountDownQrCode] = useState(5 * 60);
+    const [timeCountDownQrCode, setTimeCountDownQrCode] = useState(10 * 60);
 
     const [bookingResult, setBookingResult] = useState({});
     const [queryBookingSuccess, setQueryBookingSuccess] = useState(false);
@@ -302,12 +302,12 @@ function HomeStayDetail() {
                 response = response?.data
                 bookingResponse = {
                     bookingId: response?.bookingId,
-                    qrContent:  "https://img.vietqr.io/image/vietinbank-101870399674-compact2.jpg?amount="+response?.amount+"&addInfo="+response?.bookingId+"&accountName=BUI%20THI%20HIEN",
+                    qrContent:  "https://img.vietqr.io/image/vietinbank-101870399674-compact2.jpg?amount="+response?.amount+"&addInfo=luca"+response?.bookingId+"&accountName=BUI%20THI%20HIEN",
                     bankInfo: response?.bankInfo,
                     amount: response?.amount,
                     from: `${moment(from).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     to: `${moment(to).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
-                    expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(5, 'minutes')
+                    expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(10, 'minutes')
                 };
                 setBookingResult(bookingResponse);
                 intervalQueryBooking(response?.bookingId);
@@ -389,7 +389,7 @@ function HomeStayDetail() {
                     clearInterval(id);
                     setIntervalQueryId(null);
                 }
-            }, 5000);
+            }, 10000);
             setIntervalQueryId(id);
         } catch (error) {
             console.log(`ERROR when  call interval  ${error.message} -- ${JSON.stringify(error)}`);
@@ -950,7 +950,7 @@ function HomeStayDetail() {
                                                     {/* <QRCode value={bookingResult?.qrContent} size={200} style={{ paddingTop: '10px' }} /> */}
                                                     <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} />
                                                     <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
-                                                    <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 5 PHÚT.</p>
+                                                    <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 10 PHÚT.</p>
 
                                                     {/* <ListGroup className="mt-2 text-center" style={{ fontSize: '13px' }}>
                                                         <ListGroup.Item className='none-border'>
