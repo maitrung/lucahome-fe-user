@@ -302,7 +302,7 @@ function HomeStayDetail() {
                 response = response?.data
                 bookingResponse = {
                     bookingId: response?.bookingId,
-                    qrContent: response?.qrContent,
+                    qrContent:  "https://img.vietqr.io/image/vietinbank-101870399674-compact2.jpg?amount="+response?.amount+"&addInfo="+response?.bookingId+"&accountName=BUI%20THI%20HIEN",
                     bankInfo: response?.bankInfo,
                     amount: response?.amount,
                     from: `${moment(from).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
@@ -951,7 +951,7 @@ function HomeStayDetail() {
                                                     <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
                                                     <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 5 PHÚT.</p>
 
-                                                    <ListGroup className="mt-2 text-center" style={{ fontSize: '13px' }}>
+                                                    {/* <ListGroup className="mt-2 text-center" style={{ fontSize: '13px' }}>
                                                         <ListGroup.Item className='none-border'>
                                                             Nội dung chuyển khoản:
                                                         </ListGroup.Item>
@@ -970,7 +970,7 @@ function HomeStayDetail() {
                                                         <ListGroup.Item className='none-border'>
                                                             <span style={{ fontSize: '13px', paddingRight: '10px' }}>Số tiền:</span> {numeral(bookingResult?.amount).format('0,0')} vnđ
                                                         </ListGroup.Item>
-                                                    </ListGroup>
+                                                    </ListGroup> */}
                                                     <span style={{ fontSize: '12px', color: 'red' }}> * Mã QR chỉ cung cấp cho thanh toán lần này, vui lòng không sao lưu sử dụng cho những lần thanh toán sau.</span>
                                                 </div>
                                             </Col>
