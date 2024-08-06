@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { BiStopwatch } from 'react-icons/bi';
 
 const CountdownTimer = ({ initialTime, onClosePopup }) => {
-    const [time, setTime] = useState(5 * 60);
+    const [time, setTime] = useState(10 * 60);
 
     useEffect(() => {
         setTimeout(initialTime);
