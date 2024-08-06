@@ -947,7 +947,8 @@ function HomeStayDetail() {
                                             </Col>
                                             <Col className="border-left">
                                                 <div className="text-center" style={{ fontFamily: 'Cabin' }}>
-                                                    <QRCode value={bookingResult?.qrContent} size={200} style={{ paddingTop: '10px' }} />
+                                                    {/* <QRCode value={bookingResult?.qrContent} size={200} style={{ paddingTop: '10px' }} /> */}
+                                                    <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} />
                                                     <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
                                                     <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 5 PHÚT.</p>
 
