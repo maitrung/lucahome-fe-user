@@ -307,7 +307,7 @@ function HomeStayDetail() {
                     amount: response?.amount,
                     from: `${moment(from).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     to: `${moment(to).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
-                    expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(10, 'minutes')
+                    expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(360, 'minutes')
                 };
                 setBookingResult(bookingResponse);
                 intervalQueryBooking(response?.bookingId);
