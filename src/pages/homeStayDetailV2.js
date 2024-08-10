@@ -16,8 +16,8 @@ import NumberOfPeopleInput from './numberPeopleInput';
 import PaymentSuccess from './paymentSuccess';
 import CopyButton from './copyButton';
 import CountdownTimer from './countDownTime';
+import PayOS from './payOS';
 import Compressor from 'compressorjs';
-import { usePayOS, PayOSConfig } from "payos-checkout";
 
 function HomeStayDetailV2() {
     const [homeStay, setHomeStay] = useState({});
@@ -306,19 +306,11 @@ function HomeStayDetailV2() {
                     qrContent: response.qrCode,
                     bankInfo: response?.bankInfo,
                     amount: response?.amount,
+                    url: response?.url,
                     from: `${moment(from).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     to: `${moment(to).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(360, 'minutes')
                 };
-                const payOSConfig = {
-                    RETURN_URL: "/", // required
-                    ELEMENT_ID: "payOS", // required
-                    CHECKOUT_URL: bookingResponse.url, // required
-                    embedded: true, // Nếu dùng giao diện nhúng
-                   
-                };
-                const { open, exit } = usePayOS(payOSConfig);
-                open();
                 setBookingResult(bookingResponse);
                 intervalQueryBooking(response?.bookingId);
             } else {
@@ -957,7 +949,8 @@ function HomeStayDetailV2() {
                                             </Col>
                                             <Col className="border-left">
                                                 <div className="text-center" style={{ fontFamily: 'Cabin' }}>
-                                                    <div id='payOS'></div>
+                                                    
+                                                            <PayOS bookingdata={bookingResult} />
                                                     {/* <QRCode value={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
                                                     {/* <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
                                                     <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
