@@ -16,10 +16,9 @@ import NumberOfPeopleInput from './numberPeopleInput';
 import PaymentSuccess from './paymentSuccess';
 import CopyButton from './copyButton';
 import CountdownTimer from './countDownTime';
-import PayOS from './payOS';
 import Compressor from 'compressorjs';
 
-function HomeStayDetailV2() {
+function HomeStayDetail() {
     const [homeStay, setHomeStay] = useState({});
     const [isLoadingBooking, setIsLoadingBooking] = useState(false);
     const [isErrorBooking, setErrorBooking] = useState(false);
@@ -296,17 +295,16 @@ function HomeStayDetailV2() {
                 note: customerInfo.note
             }
 
-            let response = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'https://luca-home.vercel.app'}/booking/v22`, data);
+            let response = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'https://luca-home.vercel.app'}/booking/v2`, data);
             response = response?.data
             let bookingResponse = {};
             if (response?.code === 1000) {
                 response = response?.data
                 bookingResponse = {
                     bookingId: response?.bookingId,
-                    qrContent: response.qrCode,
+                    qrContent: "https://img.vietqr.io/image/vietinbank-101870399674-compact2.jpg?amount=" + response?.amount + "&addInfo=luca" + customerInfo.phone+"bId"+response?.bookingId+"&accountName=BUI%20THI%20HIEN",
                     bankInfo: response?.bankInfo,
                     amount: response?.amount,
-                    url: response?.url,
                     from: `${moment(from).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     to: `${moment(to).tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY HH:mm')}`,
                     expired: momentAdd(moment(new Date()).tz('Asia/Ho_Chi_Minh')).add(360, 'minutes')
@@ -949,10 +947,8 @@ function HomeStayDetailV2() {
                                             </Col>
                                             <Col className="border-left">
                                                 <div className="text-center" style={{ fontFamily: 'Cabin' }}>
-                                                    
-                                                            <PayOS bookingdata={bookingResult} />
-                                                    {/* <QRCode value={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
-                                                    {/* <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
+                                                    {/* <QRCode value={bookingResult?.qrContent} size={200} style={{ paddingTop: '10px' }} /> */}
+                                                    <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} />
                                                     <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
                                                     <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 10 PHÚT.</p>
 
@@ -1030,4 +1026,4 @@ function HomeStayDetailV2() {
     )
 }
 
-export default HomeStayDetailV2;
+export default HomeStayDetail;

@@ -5,7 +5,7 @@ import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 import Footer from './footer';
 
-function HomeStayV2() {
+function HomeStay() {
     const [homestay, setHomeStay] = useState([]);
 
     useEffect(() => {
@@ -73,7 +73,7 @@ function HomeStayV2() {
                                                 </tr> */}
                                             </tbody>
                                         </table>
-                                        <Link to={'/detailV2'} state={{ data: { homeStay: item, from: new Date() } }} className="primary-btn" style={{ color: '#fcead6' }}>
+                                        <Link to={'/detail'} state={{ data: { homeStay: item, from: new Date() } }} className="primary-btn" style={{ color: '#fcead6' }}>
                                             Chi tiết
                                         </Link>
                                     </div>
@@ -247,4 +247,4 @@ function HomeStayV2() {
     )
 }
 
-export default HomeStayV2;
+export default HomeStay;
