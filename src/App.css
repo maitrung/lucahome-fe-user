@@ -2,6 +2,11 @@
   background-color: #e08594;
 }
 
+#payOS {
+  width: 100%; /* or any other value */
+  height: 500px; /* or any other value */
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
