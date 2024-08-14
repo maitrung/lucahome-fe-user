@@ -949,56 +949,16 @@ function HomeStayDetail() {
                                             </Col>
                                             <Col className="border-left">
                                                 <div className="text-center" style={{ fontFamily: 'Cabin' }}>
-                                                    
-                                                            <PayOS bookingdata={bookingResult} />
-                                                    {/* <QRCode value={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
-                                                    {/* <img src={bookingResult?.qrContent}  style={{ paddingTop: '10px' }} /> */}
-                                                    <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
-                                                    <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 5 PHÚT.</p>
-
-                                                    {/* <ListGroup className="mt-2 text-center" style={{ fontSize: '13px' }}>
-                                                        <ListGroup.Item className='none-border'>
-                                                            Nội dung chuyển khoản:
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item className='none-border' style={{ textAlign: 'right' }}>
-                                                            <strong style={{ marginRight: '50px' }}>{bookingResult?.bankInfo?.number}</strong> <CopyButton textToCopy={bookingResult?.bankInfo?.number} />
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item className='none-border'>
-                                                            <strong>{bookingResult?.bankInfo?.fullName}</strong>
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item className='none-border'>
-                                                            <strong>{bookingResult?.bankInfo?.bankName}</strong>
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item className='none-border' style={{ textAlign: 'right' }}>
-                                                            <span style={{ fontSize: '13px', paddingRight: '10px' }}>Nội dung bắt buộc:</span> {bookingResult?.bankInfo?.content} <CopyButton textToCopy={bookingResult?.bankInfo?.content} />
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item className='none-border'>
-                                                            <span style={{ fontSize: '13px', paddingRight: '10px' }}>Số tiền:</span> {numeral(bookingResult?.amount).format('0,0')} vnđ
-                                                        </ListGroup.Item>
-                                                    </ListGroup> */}
-                                                    <span style={{ fontSize: '12px', color: 'red' }}> * Mã QR chỉ cung cấp cho thanh toán lần này, vui lòng không sao lưu sử dụng cho những lần thanh toán sau.</span>
+                                                            <CountdownTimer initialTime={timeCountDownQrCode} onClosePopup={timeoutQrCode} />
+                                                            <p style={{ fontSize: '14px', color: 'red', marginBottom: '10px', marginTop: '-10px' }}> * LƯU Ý: Mã thanh toán chỉ có hiệu lực trong 5 PHÚT.</p>
+                                                            <span style={{ fontSize: '14px', color: 'red' }}> * Mã QR chỉ cung cấp cho thanh toán lần này, vui lòng không sao lưu sử dụng cho những lần thanh toán sau.</span>
+                                                    <PayOS bookingdata={bookingResult} />
+                                                   
                                                 </div>
                                             </Col>
                                         </Row>)}
                                     </Modal.Body>
                                 </Modal>
-
-                                {/* <Modal
-                                    show={showResultBooking}
-                                    onHide={handleCloseModalError}
-                                    aria-labelledby="contained-modal-title-vcenter"
-                                    centered
-                                    size="lg"
-                                >
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Lỗi chọn khung giờ</Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body>
-                                        <div className="failure-message" style={{ color: '#ff0000', fontSize: '16px', textAlign: 'center' }}>
-                                            {errorBookDateData.message}
-                                        </div>
-                                    </Modal.Body>
-                                </Modal> */}
 
                                 <Modal
                                     show={showModalErrorBookData}
