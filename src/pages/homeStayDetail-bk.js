@@ -24,7 +24,7 @@ function HomeStayDetail() {
     const [isErrorBooking, setErrorBooking] = useState(false);
     const [intervalQueryId, setIntervalQueryId] = useState(null);
 
-    const [timeCountDownQrCode, setTimeCountDownQrCode] = useState(10 * 60);
+    const [timeCountDownQrCode, setTimeCountDownQrCode] = useState(15 * 60);
 
     const [bookingResult, setBookingResult] = useState({});
     const [queryBookingSuccess, setQueryBookingSuccess] = useState(false);
